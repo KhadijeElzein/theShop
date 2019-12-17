@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+</style>
+<div class="container">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="card mb-6">
+          <div class="card-body">
+            <div class="row">
+                <div class="col-xs-6">
+                   <img src="{{product.image.url}}">
+                </div>
+            </div>
+            <div>
+                <h2 class="mb-5">Description</h2>
+                <div>{{product.description}}</div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="col-lg-6">
+              <h4 class="product-title mb-2">{{product.name}}</h4>
+              <h2 class="product-price display-4">R$ {{product.price}}</h2>
+              <label for="quant">Quantity</label>
+              <div class="mb-2">{{product.quantity}} unities </div>
+              <button class="btn btn-warning btn-lg">Edit</button>
+              <button class="btn btn-danger btn-lg">Delete</button>
+              <a class="btn btn-primary btn-lg" href="{% url 'product_list'%}">Return</a>
+    </div>
+</div>
+      
+    
+
+  
+{% endblock %}
+
